@@ -1,0 +1,20 @@
+# description
+This dataset contains historical weather data collected from weather stations. Farmers can use it to predict harvest timing and irrigation requirements.
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeRegressor
+
+# Yükleme veri seti
+veri = pd.read_csv("weather_data.csv")
+X = veri[['sıcaklık', 'nem', 'rüzgar hızı']]
+y = veri['yağış']
+
+# Karar ağacı regresyonu kullanarak eğitme
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+model = DecisionTreeRegressor()
+model.fit(X_train, y_train)
+
+# Tahminleri tahmin edin ve değerlendirin
+y_tahmin = model.predict(X_test)
+print("R2 skoru:", model.score(X_test, y_test))
