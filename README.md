@@ -1,5 +1,5 @@
-# my-new-project
-Smart Agriculture Consultant
+# Smart Agriculture Consultant
+
 # summary 
 Data and Artificial Intelligence Techniques: The Smart Agriculture Advisor project relies on various data sources to help farmers increase productivity and sustainability. These data sources include:
 
