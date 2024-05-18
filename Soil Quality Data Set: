@@ -1,0 +1,14 @@
+import numpy as np
+from sklearn.cluster import KMeans
+
+# Yükleme veri seti
+toprak_verileri = np.loadtxt("soil_quality_data.txt", delimiter=",")
+
+# K-means kümeleme kullanarak toprak tiplerini tanımlama
+k = 3  # 3 toprak türü
+kmeans = KMeans(n_clusters=k)
+kmeans.fit(toprak_verileri)
+
+# Her toprak örneği için küme etiketlerini tahmin edin
+etiketler = kmeans.labels_
+print("Toprak örnekleri için tahmin edilen etiketler:", etiketler)
